@@ -1,8 +1,8 @@
-
-import { IExpensesService } from "../interfaces/IExpensesService";
+import { IExpensesService } from "../interfaces/IExpensesService.js";
 
 export class ExpenseService extends IExpensesService {
     constructor({ expensesRepository }) {
+        super();
         this.expensesRepository = expensesRepository;
     }
     async getAllExpenses() {

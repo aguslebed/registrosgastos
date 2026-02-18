@@ -1,10 +1,9 @@
 
-
-
 export function makeExpensesController({ expensesServices }) {
     return {
         async getAllExpenses(req, res) {
             try {
+                // console.log("Controller: getAllExpenses called");
                 const expenses = await expensesServices.getAllExpenses();
                 res.json(expenses);
             } catch (error) {

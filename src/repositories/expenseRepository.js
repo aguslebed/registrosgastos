@@ -1,4 +1,4 @@
-import expenseModel from "../models/expenseModel";
+import expenseModel from "../models/expenseModel.js";
 
 export class ExpenseRepository {
     async getAllExpenses() {

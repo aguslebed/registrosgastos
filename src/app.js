@@ -1,12 +1,12 @@
 import express from "express";
 import expenseRoutes from "./routes/expensesRoutes.js";
-
+import { connectDB } from "./db/db.js";
 console.log("Iniciando app...");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-
+connectDB();
 console.log("Configurando rutas...");
 app.use("/api/expenses", expenseRoutes);
 console.log("Rutas configuradas.");
