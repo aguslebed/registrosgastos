@@ -11,10 +11,10 @@ export class ExpenseService extends IExpensesService {
     async createExpense(expense) {
         return this.expensesRepository.createExpense(expense);
     }
-    async updateExpense(expense) {
-        return this.expensesRepository.updateExpense(expense);
+    async updateExpense(id, expense) {
+        return this.expensesRepository.updateExpense(id, expense);
     }
-    async deleteExpense(expense) {
-        return this.expensesRepository.deleteExpense(expense);
+    async deleteExpense(id) {
+        return this.expensesRepository.deleteExpense(id);
     }
 }

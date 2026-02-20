@@ -6,7 +6,8 @@ const expenseSchema = new Schema({
     description: { type: String, required: true },
     category: { type: String, required: true },
     date: { type: Date, required: true },
-    user: { type: Schema.Types.ObjectId, ref: "User" },
-});
+    deleted: { type: Boolean, default: false },
+    deletedAt: { type: Date, default: null },
+}, { timestamps: true });
 
 export default model("Expense", expenseSchema);
