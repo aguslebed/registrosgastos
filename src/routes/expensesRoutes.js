@@ -10,6 +10,7 @@ const controller = makeExpensesController({ expensesServices: expensesService })
 
 router.get("/", controller.getAllExpenses);
 router.post("/", controller.createExpense);
+router.get("/summary", controller.getSummary);
 router.put("/:id", controller.updateExpense);
 router.delete("/:id", controller.deleteExpense);
 

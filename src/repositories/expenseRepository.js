@@ -13,4 +13,36 @@ export class ExpenseRepository {
     async deleteExpense(id) {
         return expenseModel.findByIdAndUpdate(id, { deleted: true, deletedAt: new Date() }, { returnDocument: 'after' });
     }
+
+    async getSummary() {
+        return expenseModel.aggregate([
+            {
+                $match: { deleted: false }
+            },
+            {
+                $group: {
+                    _id: null,
+                    total: { $sum: "$amount" }
+                }
+            }
+        ])
+    }
+    async getSummaryBymonth(month) {
+        return expenseModel.aggregate([
+            {
+                $match: {
+                    date: {
+                        $gte: new Date("2026-02-01"),
+                        $lte: new Date("2026-02-29")
+                    }
+                }
+            },
+            {
+                $group: {
+                    _id: null,
+                    total: { $sum: "$amount" }
+                }
+            }
+        ])
+    }
 }

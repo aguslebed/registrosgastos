@@ -17,4 +17,7 @@ export class ExpenseService extends IExpensesService {
     async deleteExpense(id) {
         return this.expensesRepository.deleteExpense(id);
     }
+    async getSummary() {
+        return this.expensesRepository.getSummary();
+    }
 }

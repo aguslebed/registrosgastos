@@ -36,6 +36,14 @@ export function makeExpensesController({ expensesServices }) {
             } catch (error) {
                 res.status(500).json({ message: error.message });
             }
+        },
+        async getSummary(req, res) {
+            try {
+                const summary = await expensesServices.getSummary();
+                res.json(summary);
+            } catch (error) {
+                res.status(500).json({ message: error.message });
+            }
         }
     }
 }

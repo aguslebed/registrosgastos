@@ -11,4 +11,7 @@ export class IExpensesService {
     async deleteExpense(expense) {
         throw new Error("Method 'deleteExpense' must be implemented.");
     }
+    async getSummary() {
+        throw new Error("Method 'getSummary' must be implemented.");
+    }
 }
